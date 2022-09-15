@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import Link from "next/link";
 import Image from "next/image";
 
@@ -5,9 +7,15 @@ import styles from "./logo.module.scss";
 
 export default function Logo() {
     
+    const [ active, setActive ] = useState(0);
+
+    const classList = [styles.logo]
+    if (active)
+        classList.push(styles["logo--active"])
+
     return (
-        <div className={styles.logo}>
-            <div className={styles["logo__img"]}>
+        <div className={classList.join(" ")}>
+            <div className={styles["logo__img"]} onClick={() => active ? setActive(0) : setActive(1)}>
                 <Image
                         width="968"
                         height="398"
