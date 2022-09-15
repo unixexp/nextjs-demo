@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import Head from "next/head";
 import Layout from "../../../components/layout/layout";
 
-import { capitalize } from "../../../components/util";
+import { capitalize } from "../../../lib/util";
 
 export async function getStaticProps(context) {
 
